@@ -96,7 +96,6 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
 				<configuration>
-					<forkedProcessExitTimeoutInSeconds>120</forkedProcessExitTimeoutInSeconds>
 					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
 				</configuration>
 			</plugin>
