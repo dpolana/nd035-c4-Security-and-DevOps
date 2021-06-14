@@ -93,6 +93,62 @@ public class CartControllerTest {
         assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
+    @Test
+    public void test_remove_from_cart_200_OK(){
+        User testUser = createUser();
+        Item testItem = createItem();
+
+        ModifyCartRequest modifyCartRequest = new ModifyCartRequest();
+        modifyCartRequest.setUsername("TestUser");
+        modifyCartRequest.setItemId(1L);
+        modifyCartRequest.setQuantity(2);
+
+        when(userRepository.findByUsername(modifyCartRequest.getUsername())).thenReturn(testUser);
+        when(itemRepository.findById(modifyCartRequest.getItemId())).thenReturn(Optional.of(testItem));
+
+        ResponseEntity<Cart> responseEntity = cartController.removeFromcart(modifyCartRequest);
+
+        assertNotNull(responseEntity);
+
+        assertEquals(200, responseEntity.getStatusCodeValue());
+    }
+
+    @Test
+    public void test_remove_from_cart_User_404_NotFound(){
+        Item testItem = createItem();
+
+        ModifyCartRequest modifyCartRequest = new ModifyCartRequest();
+        modifyCartRequest.setUsername("TestUser");
+        modifyCartRequest.setItemId(1L);
+        modifyCartRequest.setQuantity(2);
+
+        when(userRepository.findByUsername(modifyCartRequest.getUsername())).thenReturn(null);
+        when(itemRepository.findById(modifyCartRequest.getItemId())).thenReturn(Optional.of(testItem));
+
+        ResponseEntity<Cart> responseEntity = cartController.removeFromcart(modifyCartRequest);
+
+        assertNull(responseEntity.getBody());
+        assertEquals(404, responseEntity.getStatusCodeValue());
+    }
+
+    @Test
+    public void test_remove_from_cart_Item_404_NotFound(){
+        User testUser = createUser();
+
+        ModifyCartRequest modifyCartRequest = new ModifyCartRequest();
+        modifyCartRequest.setUsername("TestUser");
+        modifyCartRequest.setItemId(1L);
+        modifyCartRequest.setQuantity(2);
+
+        when(userRepository.findByUsername(modifyCartRequest.getUsername())).thenReturn(testUser);
+        when(itemRepository.findById(modifyCartRequest.getItemId())).thenReturn(Optional.empty());
+
+        ResponseEntity<Cart> responseEntity = cartController.removeFromcart(modifyCartRequest);
+
+        assertNull(responseEntity.getBody());
+        assertEquals(404, responseEntity.getStatusCodeValue());
+    }
+
     private static User createUser(){
         User user = new User();
         user.setId(1L);
