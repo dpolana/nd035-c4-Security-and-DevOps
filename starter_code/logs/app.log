@@ -1,16 +1,2 @@
-2021-06-14 13:57:09,198 DEBUG com.example.demo.controllers.UserController [main] Verifying password requirements for user TestUser
-2021-06-14 13:57:09,206 INFO com.example.demo.controllers.UserController [main] User TestUser has been successfully created!
-2021-06-14 14:02:56,647 DEBUG com.example.demo.controllers.UserController [main] Verifying password requirements for user TestUser
-2021-06-14 14:02:56,655 INFO com.example.demo.controllers.UserController [main] User TestUser has been successfully created!
-2021-06-14 14:02:56,693 DEBUG com.example.demo.controllers.UserController [main] Verifying password requirements for user TestUser
-2021-06-14 14:02:56,693 INFO com.example.demo.controllers.UserController [main] User TestUser has been successfully created!
-2021-06-14 14:02:56,700 DEBUG com.example.demo.controllers.UserController [main] Verifying password requirements for user TestUser
-2021-06-14 14:02:56,700 ERROR com.example.demo.controllers.UserController [main] Unable to create User! Error validating password requirements
-2021-06-14 14:10:18,399 INFO com.example.demo.controllers.CartController [main] The item has been successfully removed from the user TestUser's cart!
-2021-06-14 14:10:18,455 ERROR com.example.demo.controllers.CartController [main] The item with id 1does not exist!
-2021-06-14 14:10:18,456 ERROR com.example.demo.controllers.CartController [main] The item with id 1does not exist!
-2021-06-14 14:10:18,459 INFO com.example.demo.controllers.CartController [main] The item has been successfully added to user TestUser's cart!
-2021-06-14 14:10:18,462 ERROR com.example.demo.controllers.CartController [main] The user TestUserdoes not exist!
-2021-06-14 14:10:18,469 ERROR com.example.demo.controllers.CartController [main] The user TestUserdoes not exist!
-2021-06-14 14:11:39,900 ERROR com.example.demo.controllers.OrderController [main] The user TestUserdoes not exist!
-2021-06-14 14:11:39,939 INFO com.example.demo.controllers.OrderController [main] The order for TestUserhas been successfully submitted!
+2021-06-15 08:01:49,357 ERROR com.example.demo.controllers.OrderController [main] The user TestUserdoes not exist!
+2021-06-15 08:01:49,426 INFO com.example.demo.controllers.OrderController [main] The order for TestUserhas been successfully submitted!
